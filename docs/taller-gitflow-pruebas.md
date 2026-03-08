@@ -28,6 +28,7 @@ Interpretación:
 | 65 | Dentro del rango |
 | 66 | Fuera del rango |
 
+
 ## 5. Trazabilidad
 
 ## 6. Gestion de Versiones (GitFlow)
