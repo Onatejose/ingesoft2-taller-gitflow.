@@ -1,37 +1,84 @@
 # Documento de Pruebas
 
 ## 1. Descripcion del Sistema
+La Plataforma de Gestión de Eventos Universitarios permite registrar estudiantes, validar su código estudiantil e inscribirlos en eventos. 
+
+El sistema solo acepta estudiantes entre 16 y 65 años. El código estudiantil debe tener 8 caracteres, iniciar con "E" y los 7 restantes ser numéricos. 
+
+Un estudiante solo puede inscribirse a eventos si está registrado, hay cupos disponibles y no está previamente inscrito.
+
+---
 
 ## 2. Requerimientos a Evaluar
 
+### RF01 – Edad del estudiante
+El sistema debe permitir el registro de estudiantes cuya edad esté entre **16 y 65 años inclusive**.
+
+### RF02 – Código del estudiante
+El sistema debe permitir que los estudiantes se registren mediante un código de estudiante que cumpla:
+
+- Debe tener exactamente **8 caracteres**
+- El primer carácter debe ser la letra **E**
+- Los **7 caracteres restantes deben ser numéricos (0-9)**
+- Si el código no cumple las reglas, el sistema debe **rechazar el registro**
+
+---
+
 ## 3. Tecnicas de Prueba Aplicadas
 
+### RF01
+**Análisis de valores límite**
+
+### RF02
+**Partición de equivalencia**
+
+---
+
 ## 4. Casos de Prueba Diseñados
+
+### RF01
+| Edad | Resultado |
+|-----|------|
+| 10 | Fuera del rango |
+| 15 | Fuera del rango |
+| 16 | Dentro del rango |
+| 30 | Dentro del rango |
+| 65 | Dentro del rango |
+| 66 | Fuera del rango |
+
+### RF02
+| Criterio | Clases válidas (V) | Clases inválidas (I) |
+|----|------------|----------|
+| Longitud | 8 caracteres | menos o más de 8 |
+| Inicia con E | Empieza con E | Empieza con otra letra |
+| Últimos 7 | Numéricos | No numéricos |
+
+---
 
 ## 5. Trazabilidad
 
 ## 6. Gestion de Versiones (GitFlow)
-Ramas creadas:
 
--main
+**Ramas creadas:**
 
-develop
-feature/descripcion-del-sistema
-feature/rf01-registro-estudiantes
-feature/rf02-codigo-estudiante
-feature/rf03-inscripcion-evento
-feature/trazabilidad
-feature/gestion-de-versiones
-feature/analisis
+- main  
+- develop  
+- feature/descripcion-del-sistema  
+- feature/rf01-registro-estudiantes  
+- feature/rf02-codigo-estudiante  
+- feature/rf03-inscripcion-evento  
+- feature/trazabilidad  
+- feature/gestion-de-versiones  
+- feature/analisis  
 
-Flujo seguido:
+**Flujo seguido:**
 
-Se creo a partir de la rama main, la rama develop y a apartir de la rama develop, las ramas de feature correspondientes a cada item del documento. Cada integrante realizo las tareas correspondientes a su feature y las subio a la develop. Ahi se aceptaron los cambios y una vez estudieron todas las feature integradas y sin conflictos generados, se subio el documento completo desde la develop a la main.
+Se creó a partir de la rama **main** la rama **develop**, y a partir de **develop** se crearon las ramas **feature** correspondientes a cada ítem del documento. Cada integrante realizó las tareas correspondientes a su feature y las subió a la rama **develop**. Allí se aceptaron los cambios y, una vez estuvieron todas las features integradas y sin conflictos, se subió el documento completo desde **develop** a **main**.
 
-Cambios integrados:
+**Cambios integrados:**
 
-Cada cambio se subio desde la feature a la develop. Ahi uno de los integrantes verifico que la informacion fuera correcta respecto a lo solicitado y que no hubieran conflictos. Si habian conflictos esta persona los solucionaba y final,emte permitia la integracion.
+Cada cambio se subió desde la **feature** a **develop**. Allí uno de los integrantes verificó que la información fuera correcta respecto a lo solicitado y que no hubiera conflictos. Si aparecían conflictos, esta persona los solucionaba y finalmente permitía la integración.
 
-Conflictos:
+**Conflictos:**
 
-Por cada cambio que se intentaba integrar a la develop se generaba un conflicto. La persona que los revisaba, los solucionaba, ubicando los textos en la posicion correcta.
+En algunos intentos de integración hacia **develop** se generaron conflictos. La persona encargada los resolvía revisando ambas versiones y ubicando los textos en la posición correcta dentro del documento.
