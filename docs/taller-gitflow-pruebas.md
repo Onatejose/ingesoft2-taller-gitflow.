@@ -1,4 +1,5 @@
 # Documento de Pruebas
+Integrantes: Jose Oñate, Ana Henao, Juan Victoria, Jhoan Marín, Juan Gonzalez, Sebastian Henao
 
 ## 1. Descripcion del Sistema
 La Plataforma de Gestión de Eventos Universitarios permite registrar estudiantes, validar su código estudiantil e inscribirlos en eventos. 
