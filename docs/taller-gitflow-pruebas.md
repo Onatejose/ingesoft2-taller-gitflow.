@@ -58,3 +58,27 @@ El sistema debe permitir que los estudiantes se registren mediante un código de
 ## 5. Trazabilidad
 
 ## 6. Gestion de Versiones (GitFlow)
+
+**Ramas creadas:**
+
+- main  
+- develop  
+- feature/descripcion-del-sistema  
+- feature/rf01-registro-estudiantes  
+- feature/rf02-codigo-estudiante  
+- feature/rf03-inscripcion-evento  
+- feature/trazabilidad  
+- feature/gestion-de-versiones  
+- feature/analisis  
+
+**Flujo seguido:**
+
+Se creó a partir de la rama **main** la rama **develop**, y a partir de **develop** se crearon las ramas **feature** correspondientes a cada ítem del documento. Cada integrante realizó las tareas correspondientes a su feature y las subió a la rama **develop**. Allí se aceptaron los cambios y, una vez estuvieron todas las features integradas y sin conflictos, se subió el documento completo desde **develop** a **main**.
+
+**Cambios integrados:**
+
+Cada cambio se subió desde la **feature** a **develop**. Allí uno de los integrantes verificó que la información fuera correcta respecto a lo solicitado y que no hubiera conflictos. Si aparecían conflictos, esta persona los solucionaba y finalmente permitía la integración.
+
+**Conflictos:**
+
+En algunos intentos de integración hacia **develop** se generaron conflictos. La persona encargada los resolvía revisando ambas versiones y ubicando los textos en la posición correcta dentro del documento.
