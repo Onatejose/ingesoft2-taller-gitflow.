@@ -1,46 +1,60 @@
 # Documento de Pruebas
 
 ## 1. Descripcion del Sistema
-rf02
-- el sistema debe permitir que los estudiantes se pueda registrar mediante un codigo del estudiante que minimo deba tener 8 caracteres, siguiendo algunas condiciones, como por ejemplo el primer caracter deba tener la letra E
+La Plataforma de Gestión de Eventos Universitarios permite registrar estudiantes, validar su código estudiantil e inscribirlos en eventos. 
 
+El sistema solo acepta estudiantes entre 16 y 65 años. El código estudiantil debe tener 8 caracteres, iniciar con "E" y los 7 restantes ser numéricos. 
 
-## 2. Requerimientos a Evaluar
- RF02
--Debe tener exactamente 8 caracteres.
--El primer carácter debe ser la letra “E”.
--Los 7 caracteres restantes deben ser numéricos (0-9).
--El sistema debe aceptar el registro únicamente si el código cumple todas las condiciones.
--Si el código no cumple alguna de las reglas, el sistema debe rechazar el registro y mostrar un mensaje de error indicando que el código es inválido.
-
-
-
-
-## 3. Tecnicas de Prueba Aplicadas
-RF02
-Tecnica- Particion de equivalencia
--se usa particion de equivalencia, por que hace que el sistema implemente nuevas reglas como en este caso, son 8 caracteres que necesita como minimo se acopla muy bien al requerimiento
+Un estudiante solo puede inscribirse a eventos si está registrado, hay cupos disponibles y no está previamente inscrito.
 
 ---
 
+## 2. Requerimientos a Evaluar
+
+### RF01 – Edad del estudiante
+El sistema debe permitir el registro de estudiantes cuya edad esté entre **16 y 65 años inclusive**.
+
+### RF02 – Código del estudiante
+El sistema debe permitir que los estudiantes se registren mediante un código de estudiante que cumpla:
+
+- Debe tener exactamente **8 caracteres**
+- El primer carácter debe ser la letra **E**
+- Los **7 caracteres restantes deben ser numéricos (0-9)**
+- Si el código no cumple las reglas, el sistema debe **rechazar el registro**
+
+---
+
+## 3. Tecnicas de Prueba Aplicadas
+
+### RF01
+**Análisis de valores límite**
+
+### RF02
+**Partición de equivalencia**
+
+---
 
 ## 4. Casos de Prueba Diseñados
-RF02
-| Criterio |clases validas(V) | Clases invalidas(I) |
+
+### RF01
+| Edad | Resultado |
+|-----|------|
+| 10 | Fuera del rango |
+| 15 | Fuera del rango |
+| 16 | Dentro del rango |
+| 30 | Dentro del rango |
+| 65 | Dentro del rango |
+| 66 | Fuera del rango |
+
+### RF02
+| Criterio | Clases válidas (V) | Clases inválidas (I) |
 |----|------------|----------|
-| longitud de caracter | solamente 8 caracteres | menos o mas de 8 caracteres |
-|iniciar con la lera E|debe iniciar con la letra E|inicia con cualquier letra menos E|
-|7 caracter restantes numericos|los ultimos 7  son numericos|los ultimos no son numericos|
+| Longitud | 8 caracteres | menos o más de 8 |
+| Inicia con E | Empieza con E | Empieza con otra letra |
+| Últimos 7 | Numéricos | No numéricos |
 
-
-
-
-
-
-
+---
 
 ## 5. Trazabilidad
 
-
-## 5. Trazabilidad
 ## 6. Gestion de Versiones (GitFlow)
