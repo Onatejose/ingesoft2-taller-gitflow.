@@ -22,6 +22,16 @@ El sistema debe permitir que los estudiantes se registren mediante un código de
 - Los **7 caracteres restantes deben ser numéricos (0-9)**
 - Si el código no cumple las reglas, el sistema debe **rechazar el registro**
 
+### RF03 – Inscripción a Evento
+
+Un estudiante podrá inscribirse a un evento solo si:
+
+- Está registrado.
+- El evento tiene cupos disponibles.
+- No está previamente inscrito.
+
+Si alguna condición no se cumple, el sistema no debe permitir la inscripción.
+
 ---
 
 ## 3. Tecnicas de Prueba Aplicadas
@@ -31,6 +41,11 @@ El sistema debe permitir que los estudiantes se registren mediante un código de
 
 ### RF02
 **Partición de equivalencia**
+
+### RF03
+**Técnica seleccionada:** Tabla de decisión  
+
+**Justificación:** Esta técnica permite evaluar múltiples condiciones al mismo tiempo y analizar cómo las diferentes combinaciones afectan el resultado de la inscripción al evento.
 
 ---
 
@@ -53,9 +68,22 @@ El sistema debe permitir que los estudiantes se registren mediante un código de
 | Inicia con E | Empieza con E | Empieza con otra letra |
 | Últimos 7 | Numéricos | No numéricos |
 
----
+### RF03
 
+| ¿Está registrado? | ¿El evento tiene cupos disponibles? | ¿Está previamente inscrito? | ¿Se registra en el evento? |
+|------------------|-----------------------|----------------------|----------------------|
+| Sí | Sí | No | Sí |
+| No | Sí | Sí | No |
+
+---
 ## 5. Trazabilidad
+| Requerimiento |          Técnica        | Casos asociados |
+|---------------|------------------------------------------------------|-----------------|
+| RF-01         |  Análisis de valor límite| CP-01, CP-02    |
+| RF-02         |  Partición de equivalencia       | CP-03    |
+| RF-03         |    Tabla de decisión    | CP-04    |
+
+---
 
 ## 6. Gestion de Versiones (GitFlow)
 
@@ -82,7 +110,6 @@ Cada cambio se subió desde la **feature** a **develop**. Allí uno de los integ
 **Conflictos:**
 
 En algunos intentos de integración hacia **develop** se generaron conflictos. La persona encargada los resolvía revisando ambas versiones y ubicando los textos en la posición correcta dentro del documento.
-
 ## 7. Analisis
 
 
