@@ -1,4 +1,5 @@
 # Documento de Pruebas
+Integrantes: Jose Oñate, Ana Henao, Juan Victoria, Jhoan Marín, Juan Gonzalez, Sebastian Henao
 
 ## 1. Descripcion del Sistema
 La Plataforma de Gestión de Eventos Universitarios permite registrar estudiantes, validar su código estudiantil e inscribirlos en eventos. 
@@ -76,8 +77,14 @@ Si alguna condición no se cumple, el sistema no debe permitir la inscripción.
 | No | Sí | Sí | No |
 
 ---
-
 ## 5. Trazabilidad
+| Requerimiento |          Técnica        | Casos asociados |
+|---------------|------------------------------------------------------|-----------------|
+| RF-01         |  Análisis de valor límite| CP-01, CP-02    |
+| RF-02         |  Partición de equivalencia       | CP-03    |
+| RF-03         |    Tabla de decisión    | CP-04    |
+
+---
 
 ## 6. Gestion de Versiones (GitFlow)
 
@@ -104,7 +111,6 @@ Cada cambio se subió desde la **feature** a **develop**. Allí uno de los integ
 **Conflictos:**
 
 En algunos intentos de integración hacia **develop** se generaron conflictos. La persona encargada los resolvía revisando ambas versiones y ubicando los textos en la posición correcta dentro del documento.
-
 ## 7. Analisis
 
 
