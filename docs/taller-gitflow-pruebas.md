@@ -1,25 +1,43 @@
 # Documento de Pruebas
 
 ## 1. Descripcion del Sistema
-La Plataforma de Gestión de Eventos Universitarios permite registrar estudiantes, validar su código estudiantil e inscribirlos en eventos. El sistema solo acepta estudiantes entre 16 y 65 años. El código estudiantil debe tener 8 caracteres, iniciar con "E" y los 7 restantes ser numéricos. Un estudiante solo puede inscribirse a eventos si está registrado, hay cupos disponibles y no está previamente inscrito. Si alguna condición no se cumple, la inscripción no se permite.
+La Plataforma de Gestión de Eventos Universitarios permite registrar estudiantes, validar su código estudiantil e inscribirlos en eventos. 
+
+El sistema solo acepta estudiantes entre 16 y 65 años. El código estudiantil debe tener 8 caracteres, iniciar con "E" y los 7 restantes ser numéricos. 
+
+Un estudiante solo puede inscribirse a eventos si está registrado, hay cupos disponibles y no está previamente inscrito.
+
+---
+
 ## 2. Requerimientos a Evaluar
-RF-O1. El sistema debe permitir el registro de estudiantes cuya edad esté entre **16 y 65 años inclusive**.
 
-Interpretación:
+### RF01 – Edad del estudiante
+El sistema debe permitir el registro de estudiantes cuya edad esté entre **16 y 65 años inclusive**.
 
-- Edad mínima permitida: **16**
-- Edad máxima permitida: **65**
-- Edades menores a 16 → **no permitidas**
-- Edades mayores a 65 → **no permitidas**
+### RF02 – Código del estudiante
+El sistema debe permitir que los estudiantes se registren mediante un código de estudiante que cumpla:
+
+- Debe tener exactamente **8 caracteres**
+- El primer carácter debe ser la letra **E**
+- Los **7 caracteres restantes deben ser numéricos (0-9)**
+- Si el código no cumple las reglas, el sistema debe **rechazar el registro**
 
 ---
 
 ## 3. Tecnicas de Prueba Aplicadas
-- Análisis de valores límite
-- El requerimiento establece un **rango numérico válido**, por lo que lo mas recomendable es Valores límite para probar los extremos del rango donde suelen ocurrir errores.
+
+### RF01
+**Análisis de valores límite**
+
+### RF02
+**Partición de equivalencia**
+
+---
 
 ## 4. Casos de Prueba Diseñados
-| Edad | Rango |
+
+### RF01
+| Edad | Resultado |
 |-----|------|
 | 10 | Fuera del rango |
 | 15 | Fuera del rango |
@@ -28,6 +46,14 @@ Interpretación:
 | 65 | Dentro del rango |
 | 66 | Fuera del rango |
 
+### RF02
+| Criterio | Clases válidas (V) | Clases inválidas (I) |
+|----|------------|----------|
+| Longitud | 8 caracteres | menos o más de 8 |
+| Inicia con E | Empieza con E | Empieza con otra letra |
+| Últimos 7 | Numéricos | No numéricos |
+
+---
 
 ## 5. Trazabilidad
 
